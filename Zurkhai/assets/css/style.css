@@ -1,0 +1,452 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Биеийн үндсэн хэв маяг */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('../images/Back.jpg'); /* Утаатай эффекттэй зураг */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Гүйлгөхөд хөдөлгөөнгүй байлгах */
+    color: #e0f7fa;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+.hero-section {
+    background: transparent; /* Зургийг тодруулахын тулд тунгалаг хар фон нэмж болно */
+    color: #fff;
+    text-align: center;
+    padding: 180px 20px 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header h1 {
+    
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 0;
+}
+
+nav ul li {
+    margin: 10px 15px;
+}
+
+nav ul li a {
+    color: #e9c65e; /* Өнгөлөг линк */
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+/* Үндсэн хэсэг (Hero Section) */
+
+.hero-section h1 {
+    font-size: 3.8rem;
+    margin-bottom: 20px;
+    letter-spacing: 1.2px;
+}
+
+.hero-section p {
+    font-size: 1.4rem;
+    max-width: 700px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    color: grey;
+}
+
+/* Section-уудын үндсэн загвар */
+section {
+    padding: 100px 20px;
+    text-align: center;
+    position: relative; /* absolute элементүүдийг байрлуулахад */
+}
+.section-content1 {
+    margin-top: 50px;
+    
+}
+.display123{
+    display: block;
+}
+.section-content1 h1{
+    font-size: 120px;
+}
+.section-content p{
+    font-size: 25px;
+}
+section:nth-child(even) {
+    background: transparent;
+}
+.rotate-image {
+    animation: spin 45s linear infinite;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* Эргэлдүүлэх animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    color: #f9ca24; /* Шардуудуу заголовок */
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 60px;
+    background-color: #f9ca24;
+}
+
+/* "Ордын зан чанар" хэсэг */
+.personality-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+.button-gold {
+    background-color: #e9c65e; /* Алтан шаргал өнгө */
+    color: black; /* Цагаан текст */
+    padding: 10px 20px; /* Дотор зай */
+    border: none; /* Хүрээгүй */
+    border-radius: 10px; /* Булан бөөрөнхийлөх */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer; /* Гарын заагч өөрчлөх */
+    transition: background-color 0.3s ease; /* Зөөлөн өнгө солилцоо */
+    text-decoration: none;
+}
+
+.button-gold:hover {
+    background-color: #FFC300; /* Hover хийхэд арай бараан шаргал болно */
+}
+
+
+.personality-image {
+    background: url('../images/1-removebg-preview.png') center/contain no-repeat;
+    width: 300px;
+    height: 300px;
+    
+}
+
+.personality-section .section-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    line-height: 1.8;
+    
+}
+
+.personality-section .learn-more-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #e9c65e;
+    color: #212121;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.personality-section .learn-more-button:hover {
+    background-color: #F8D56B;
+}
+
+/* "Хос нийцэл" хэсэг */
+.compatibility-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.compatibility-icon {
+    background: url('assets/images/broken-heart.png') center/contain no-repeat;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+/* "Төрсөн өдрийн шинжилгээ" хэсэг */
+.birth-analysis-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.birth-analysis-icon {
+    background: url('assets/images/crystal-ball.png') center/contain no-repeat;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+/* "AI Зурхайчтай чат" хэсэг */
+.ai-chat-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.ai-chat-icon {
+    background: url('assets/images/chat-icon.png') center/contain no-repeat;
+    width: 160px;
+    height: 160px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+/* Footer */
+footer {
+    background-color: transparent;
+    color: #e9c65e;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 1rem;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #e76f51;
+}
+.user-info {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.user-info a.logout-btn {
+    margin-left: 10px;
+    color: #F8D56B;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: grey;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    padding: 1px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #e9c65e;
+}
+
+/* Active линк */
+nav ul li a.active {
+    color: #e9c65e;
+    font-weight: bold;
+}
+
+nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #e9c65e;
+    border-radius: 3px;
+    animation: underlineGrow 0.5s ease forwards;
+}
+
+@keyframes underlineGrow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Хэрэглэгчийн мэдээлэл */
+.user-info {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.logout-btn:hover {
+    background: #f1d57c;
+}
+
+
+nav {
+    margin-top: 20px;
+}
+.user-info a.logout-btn:hover {
+    text-shadow: 0 0 5px #F8D56B;
+}
+nav ul li a.active {
+    border-bottom: 3px solid #e9c65e; /* доогуураа гоё шугам */
+    color: #e9c65e; /* идэвхтэй үед өнгө өөр болно */
+    font-weight: bold;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+nav ul li a.active {
+    position: relative;
+    color: #e9c65e;
+    font-weight: bold;
+}
+nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: #e9c65e;
+    border-radius: 3px;
+    animation: underlineGrow 0.5s ease forwards;
+}
+
+@keyframes underlineGrow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        margin-bottom: 5px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+    
+    
+    .hero-section {
+        padding: 150px 20px 100px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+
+    section {
+        padding: 80px 20px;
+    }
+
+    section h2 {
+        font-size: 2.4rem;
+        margin-bottom: 30px;
+    }
+
+    .personality-image,
+    .compatibility-icon,
+    .birth-analysis-icon,
+    .ai-chat-icon {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px;
+    }
+}
+
