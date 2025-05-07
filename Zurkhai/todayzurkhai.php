@@ -47,8 +47,3 @@ $data = $stmt->fetch();
 </section>
 
 
-
-
-<?php
-include 'footer.php';
-?>

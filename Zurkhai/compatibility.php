@@ -66,19 +66,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 $conn->close();
 ?>
-
-<!-- CSS -->
 <style>
-    body {
-        font-family: 'Montserrat', sans-serif;
-        background: 'transparent';
-        margin: 0;
-        padding: 0;
-    }
 
     .compatibility-form {
-        max-width: 1700px;
-        margin: 200px auto;
+        max-width: 1000px;
+        margin: 180px auto;
+        
         padding: 30px;
         background: #ffffff;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -92,36 +85,41 @@ $conn->close();
     }
 
     .compatibility-form select {
-        width: 300px;
-        padding: 10px;
-        margin: 10px 220px;
+        width: 80%;
+        padding: 15px;
+        margin: 15px auto;
         border: 1px solid #ccc;
         border-radius: 5px;
+        display: block;
     }
 
     .compatibility-form button {
-        width: 200px;
-        padding: 10px;
+        width: 60%;
+        padding: 12px;
         background: #e9c65e;
-        color: white;
+        color: black;
         border: none;
         border-radius: 5px;
         font-size: 16px;
         cursor: pointer;
         transition: background 0.3s;
+        margin-top: 20px;
     }
 
     .compatibility-form button:hover {
         background: #574fd6;
+        color: white;
     }
-    .zodiac-name{
-        font-size: 50px;
+
+    .zodiac-name {
+        font-size: 30px;
         font-weight: bold;
         color: white;
-        
+        margin-top: 10px;
     }
+
     .result {
-        max-width: 1700px;
+        max-width: 2500px;
         height:500px;
         margin: 200px ;
         padding: 30px;
@@ -130,7 +128,6 @@ $conn->close();
         text-align: center;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-
     .zodiac-images {
         display: flex;
         align-items: center;
@@ -143,14 +140,21 @@ $conn->close();
         height: 450px;
         object-fit: contain;
     }
-
     .compatibility-text {
-        font-size: 30px;
-        font-weight: bold;
-        color: white;
-        max-width: 300px;
-        margin:50px;
-    }
+    width: 950px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    max-width: 1000px;
+    margin: 50px auto;
+    white-space: normal; /* Allow the text to wrap */
+    word-wrap: break-word; /* Ensures long words break if necessary */
+    overflow-wrap: break-word; /* Prevents overflow of long words */
+    line-height: 1.6; /* Improves readability */
+    text-align: center; /* Center-aligns the text */
+    padding: 20px; /* Adds some padding for better spacing */
+}
+
 
     .back-button {
         margin-top: 20px;
@@ -165,46 +169,89 @@ $conn->close();
     .back-button:hover {
         background: #e53935;
     }
-    /* Select элементийн стилийг өөрчлөх */
-select {
-    width: 100%; /* Бүтэн өргөнийг ашиглах */
-    padding: 25px 60px; /* Дотоод зайг томруулж, илүү том үзэмжтэй болгоно */
-    font-size: 18px; /* Фонтын хэмжээг ихэсгэж */
-    background-color: #f8f8f8; /* Бага зэрэг саарал өнгө */
-    border: 1px solid #ccc; /* Гаралттай хил */
-    border-radius: 10px; /* Баганагийн булангуудыг дугуйрсан */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Сүүдрийг нэмнэ */
-    transition: all 0.3s ease; /* Хэв маягаа зөөлөн өөрчлөх */
-    outline: none; /* Сонголтын хэсгийн гадна талаас гарч буй хатуу хүрээг устгана */
-}
 
-/* Hover үед */
-select:hover {
-    border-color: #e9c65e; /* Сарнай шар өнгө */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Сүүдэр ихэсгэх */
-}
+    select {
+        padding: 15px 20px;
+        font-size: 16px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        outline: none;
+    }
 
-/* Focus үед */
-select:focus {
-    border-color: #574fd6; /* Фокус хийхэд өнгө өөрчлөгдөнө */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Focus үед сүүдэр нэмэгдэнэ */
-}
+    select:hover {
+        border-color: #e9c65e;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
 
-select option {
-    height:40px;
-    padding: 10px 60px; /* Дотоод зай нэмнэ */
-    font-size: 16px; /* Фонтын хэмжээ */
-    background-color: #fff; /* Цагаан фон */
-    color: #333; /* Хар өнгөтэй текст */
-}
+    select:focus {
+        border-color: #574fd6;
+    }
 
-/* Сонгогдсон option дээр hover хийж буй үед */
-select option:hover {
-    background-color: #e9c65e; /* Сарнай шар өнгө */
-    color: #fff; /* Цагаан өнгийн текст */
-}
+    select option {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
 
+    /* Responsive */
+    @media (max-width: 992px) {
+        .zodiac-images {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .zodiac-images img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .compatibility-text {
+        font-size: 20px; /* Smaller font size for medium screens */
+        padding: 15px; /* Reduce padding for smaller screens */
+        margin: 30px auto; /* Adjust margin for better spacing */
+    }
+
+        .compatibility-form select {
+            width: 90%;
+        }
+
+        .compatibility-form button {
+            width: 80%;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .compatibility-form {
+            padding: 20px;
+            margin: 100px auto;
+        }
+
+        .zodiac-images img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .zodiac-name {
+            font-size: 24px;
+        }
+
+        .compatibility-text {
+        font-size: 20px; /* Smaller font size for medium screens */
+        padding: 15px; /* Reduce padding for smaller screens */
+        margin: 30px auto; /* Adjust margin for better spacing */
+    }
+        .compatibility-form button {
+            width: 100%;
+        }
+
+        .result {
+            padding: 20px;
+            margin: 100px auto;
+        }
+    }
 </style>
+
 
 <!-- HTML -->
 <div class="compatibility-form" id="formContainer" <?php if (!empty($resultHtml)) echo 'style="display:none;"'; ?>>
@@ -274,6 +321,3 @@ if (!empty($resultHtml)) {
     }
 </script>
 
-<?php
-include 'footer.php';
-?>

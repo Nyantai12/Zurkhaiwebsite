@@ -49,6 +49,4 @@ $personality = getPersonality($zodiac, $pdo);
     </div>
 </section>
 
-<?php
-include 'footer.php';
-?>
+
