@@ -27,7 +27,7 @@ $currentPage = basename($_SERVER['PHP_SELF']); // одоогийн файл нэ
         <li><a href="personality.php" class="<?php echo ($currentPage == 'personality.php') ? 'active' : ''; ?>">Ордын зан чанар</a></li>
         <li><a href="compatibility.php" class="<?php echo ($currentPage == 'compatibility.php') ? 'active' : ''; ?>">Хос нийцэл</a></li>
         <li><a href="birth-analysis.php" class="<?php echo ($currentPage == 'birth-analysis.php') ? 'active' : ''; ?>">Төрсөн өдрийн шинжилгээ</a></li>
-        <li><a href="ai-chat.php" class="<?php echo ($currentPage == 'ai-chat.php') ? 'active' : ''; ?>">AI Зурхайч</a></li>
+        <li><a href="starmap.php" class="<?php echo ($currentPage == 'starmap.php') ? 'active' : ''; ?>">Одны зураглал</a></li>
     </ul>
 </nav>
 
